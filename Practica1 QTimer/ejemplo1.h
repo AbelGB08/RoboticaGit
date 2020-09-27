@@ -12,9 +12,12 @@ class ejemplo1 : public QWidget, public Ui_Counter
         ejemplo1();
 
     public slots:
+        void increase();
+        void decrease();
         void doButton();
         void doSlider_2();
         void contar();
+        void decrementar();
 
     private:
         QTimer *timer;

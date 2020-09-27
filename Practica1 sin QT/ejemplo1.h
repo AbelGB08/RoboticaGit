@@ -13,17 +13,19 @@ Q_OBJECT
     public:
         ejemplo1();
         virtual ~ejemplo1();
+        int aux;
     
     public slots:
 	void doButton();
+    void increase();
+    void decrementar();
+
         
     private:
         Timer mytimer, mytimerLong;
         int cont = 0;
-		
 		// dos callbacks con diferente número de parámetros
         void cuenta();
-		
 		int trick = 5;
 };
 

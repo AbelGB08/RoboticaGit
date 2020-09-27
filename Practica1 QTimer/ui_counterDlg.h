@@ -32,6 +32,8 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
+    QPushButton *pushButton;
+    QPushButton *pushButton1;
 
     void setupUi(QWidget *Counter)
     {
@@ -72,6 +74,13 @@ public:
         label_3 = new QLabel(Counter);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(560, 230, 67, 17));
+        pushButton = new QPushButton(Counter);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(80, 150, 89, 25));
+        pushButton1 = new QPushButton(Counter);
+        pushButton1->setObjectName(QString::fromUtf8("pushButton1"));
+        pushButton1->setGeometry(QRect(240, 150, 89, 25));
+
 
         retranslateUi(Counter);
         QObject::connect(verticalSlider, SIGNAL(valueChanged(int)), label, SLOT(setNum(int)));
@@ -89,6 +98,8 @@ public:
         label->setText(QApplication::translate("Counter", "1", nullptr));
         label_2->setText(QApplication::translate("Counter", "1000 ", nullptr));
         label_3->setText(QApplication::translate("Counter", "ms", nullptr));
+        pushButton->setText(QApplication::translate("Counter", "INCREASE", nullptr));
+        pushButton1->setText(QApplication::translate("Counter", "DECREASE", nullptr));
     } // retranslateUi
 
 };
