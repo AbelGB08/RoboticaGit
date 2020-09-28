@@ -55,7 +55,7 @@ public:
         verticalSlider_2 = new QSlider(Counter);
         verticalSlider_2->setObjectName(QString::fromUtf8("verticalSlider_2"));
         verticalSlider_2->setGeometry(QRect(530, 40, 16, 160));
-        verticalSlider_2->setMinimum(0);
+        verticalSlider_2->setMinimum(1);
         verticalSlider_2->setMaximum(1000);
         verticalSlider_2->setSliderPosition(1000);
         verticalSlider_2->setOrientation(Qt::Vertical);
@@ -80,7 +80,6 @@ public:
         pushButton1 = new QPushButton(Counter);
         pushButton1->setObjectName(QString::fromUtf8("pushButton1"));
         pushButton1->setGeometry(QRect(240, 150, 89, 25));
-
 
         retranslateUi(Counter);
         QObject::connect(verticalSlider, SIGNAL(valueChanged(int)), label, SLOT(setNum(int)));
