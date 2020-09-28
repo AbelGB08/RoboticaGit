@@ -19,6 +19,7 @@ Q_OBJECT
 	void doButton();
     void increase();
     void decrementar();
+    void doSlider_2();
 
         
     private:
