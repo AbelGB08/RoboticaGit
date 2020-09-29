@@ -1,0 +1,12 @@
+import "DifferentialRobot.idsl";
+import "Laser.idsl";
+
+Component myFirstComp
+{
+    Communications
+    {
+        requires DifferentialRobot, Laser;
+    };
+    language Cpp;
+};
+
