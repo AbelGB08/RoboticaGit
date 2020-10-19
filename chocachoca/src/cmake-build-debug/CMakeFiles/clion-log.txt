@@ -1,0 +1,51 @@
+/home/abel/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.6948.80/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src"
+CMake Warning (dev) in CMakeLists.txt:
+  No project() command is present.  The top-level CMakeLists.txt file must
+  contain a literal, direct call to the project() command.  Add a line of
+  code such as
+
+    project(ProjectName)
+
+  near the top of the file, but after cmake_minimum_required().
+
+  CMake is pretending there is a "project(Project)" command on the first
+  line.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning at CMakeLists.txt:5 (MESSAGE):
+  ROBOCOMP variable not set.  Using the default value: /opt/robocomp
+
+
+-- COMPILING WITH QT5
+-- RoboComp root is now set to /opt/robocomp//
+-- 
+-- Ice version: 3.7.3
+-- Found the following Ice libraries:
+--   Ice (required)
+--   IceStorm (required)
+-- The following Ice libraries were not found:
+--   IceUtil (optional)
+CMake Warning (dev) at /opt/robocomp/cmake/robocomp.cmake:99 (ADD_CUSTOM_TARGET):
+  Policy CMP0037 is not set: Target names should not be reserved and should
+  match a validity pattern.  Run "cmake --help-policy CMP0037" for policy
+  details.  Use the cmake_policy command to set the policy and suppress this
+  warning.
+
+  The target name "ICES__home_abel_UNEX_Cuarto_Robotica_RoboticaGit_Practica
+  2_myComponent_src" is reserved or not valid for certain CMake features,
+  such as generator expressions, and may result in undefined behavior.
+Call Stack (most recent call first):
+  CMakeLists.txt:34 (ROBOCOMP_IDSL_TO_ICE)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Adding rule to generate CommonBehavior.ice from /opt/robocomp//interfaces/IDSLs/CommonBehavior.idsl
+-- Adding rule to generate DifferentialRobot.ice from /opt/robocomp//interfaces/IDSLs/DifferentialRobot.idsl
+-- Adding rule to generate GenericBase.ice from /opt/robocomp//interfaces/IDSLs/GenericBase.idsl
+-- Adding rule to generate Laser.ice from /opt/robocomp//interfaces/IDSLs/Laser.idsl
+-- Adding rule to generate CommonBehavior.h and CommonBehavior.cpp from CommonBehavior.ice
+-- Adding rule to generate DifferentialRobot.h and DifferentialRobot.cpp from DifferentialRobot.ice
+-- Adding rule to generate GenericBase.h and GenericBase.cpp from GenericBase.ice
+-- Adding rule to generate Laser.h and Laser.cpp from Laser.ice
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src/cmake-build-debug
