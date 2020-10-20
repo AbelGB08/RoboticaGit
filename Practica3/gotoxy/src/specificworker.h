@@ -38,16 +38,17 @@ public:
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
 
-
 	void RCISMousePicker_setPick(RoboCompRCISMousePicker::Pick myPick);
 
 public slots:
 	void compute();
 	int startup_check();
 	void initialize(int period);
+
 private:
 	std::shared_ptr < InnerModel > innerModel;
 	bool startup_check_flag;
+	std::optional<Target> get();
 
 };
 
