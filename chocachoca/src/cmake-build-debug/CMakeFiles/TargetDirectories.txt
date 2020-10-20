@@ -1,9 +1,0 @@
-/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src/cmake-build-debug/CMakeFiles/install/strip.dir
-/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src/cmake-build-debug/CMakeFiles/install/local.dir
-/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src/cmake-build-debug/CMakeFiles/install.dir
-/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src/cmake-build-debug/CMakeFiles/list_install_components.dir
-/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src/cmake-build-debug/CMakeFiles/ICES__home_abel_UNEX_Cuarto_Robotica_RoboticaGit_Practica 2_myComponent_src.dir
-/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src/cmake-build-debug/CMakeFiles/MyFirstComp.dir
-/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica 2/myComponent/src/cmake-build-debug/CMakeFiles/MyFirstComp_autogen.dir
