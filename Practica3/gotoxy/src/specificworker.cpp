@@ -98,8 +98,8 @@ int SpecificWorker::startup_check()
 //SUBSCRIPTION to setPick method from RCISMousePicker interface
 void SpecificWorker::RCISMousePicker_setPick(RoboCompRCISMousePicker::Pick myPick)
 {
-//subscribesToCODE
-
+    //subscribesToCODE
+    qDebug() << myPick.x << myPick.y << myPick.z;
 }
 
 
