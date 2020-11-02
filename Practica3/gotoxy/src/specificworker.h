@@ -29,6 +29,7 @@
 
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
+#include <eigen3/Eigen/Dense>
 
 class SpecificWorker : public GenericWorker
 {

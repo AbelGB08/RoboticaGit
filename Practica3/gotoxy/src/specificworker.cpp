@@ -17,6 +17,34 @@
  *    along with RoboComp.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "specificworker.h"
+#include <eigen3/Eigen/Dense>
+struct Target
+{
+    float x; float y;
+    mutable std::mutex my_mutex;
+    bool activate = false;
+
+    void put(float x_,float y_)
+    {
+        std::lock_guard<std::mutex> guard(my_mutex);
+        x=x_;y=y_;   // generic type must be copy-constructable
+        activate = true;
+        
+    }
+    std::optional<std::tuple<float,float>> get()
+    {
+        std::lock_guard<std::mutex> guard(my_mutex);
+        if(activate)
+            return std::make_tuple(x,y);
+        else
+            return {};
+    }
+    void set_task_finished()
+    {
+        std::lock_guard<std::mutex> guard(my_mutex);
+        activate = false;
+    }
+}buffer;
 
 /**
 * \brief Default constructor
@@ -71,20 +99,59 @@ void SpecificWorker::initialize(int period)
 
 void SpecificWorker::compute()
 {
-	//computeCODE
-	//QMutexLocker locker(mutex);
-	//try
-	//{
-	//  camera_proxy->getYImage(0,img, cState, bState);
-	//  memcpy(image_gray.data, &img[0], m_width*m_height*sizeof(uchar));
-	//  searchTags(image_gray);
-	//}
-	//catch(const Ice::Exception &e)
-	//{
-	//  std::cout << "Error reading from Camera" << e << std::endl;
-	//}
-	
-	
+	RoboCompGenericBase::TBaseState state;
+	const ::Ice::Context& context = ::Ice::noExplicitContext;
+	differentialrobot_proxy->getBaseState(state, context);
+
+	if (auto t = buffer.get();t.has_value())
+	{
+		auto tw = t.value();
+		Eigen::Vector2f rw(state.x,state.z);
+		Eigen::Matrix2f rot;
+		Eigen::Vector2f ty(get<0>(tw),get<1>(tw));
+		rot<<cos(state.alpha),-sin(state.alpha),sin(state.alpha),cos(state.alpha);
+		auto tr = rot*(ty-rw);
+		auto beta = atan2(tr[0],tr[1]);	
+		auto dist = tr.norm();
+
+		if(beta > 0.05 ||beta < -0.05)
+		{
+			if(beta > 2)
+			{
+				differentialrobot_proxy->setSpeedBase(0, 2);
+			}
+			else
+            {
+				if(beta < -2)
+				{
+					differentialrobot_proxy->setSpeedBase(0, -2);
+				}
+				else
+                {
+					differentialrobot_proxy->setSpeedBase(0, beta);
+				}
+			}
+		}
+		else
+        {
+			if(dist > 0.05)
+			{
+				if(dist > 1000)
+				{
+				differentialrobot_proxy->setSpeedBase(1000, 0);
+			    }
+                else
+                {
+				differentialrobot_proxy->setSpeedBase(dist, 0);
+			    }
+		    }
+			else
+            {
+			    differentialrobot_proxy->setSpeedBase(0, 0);
+			    buffer.set_task_finished();
+            }
+		}
+	}
 }
 
 int SpecificWorker::startup_check()
@@ -100,6 +167,8 @@ void SpecificWorker::RCISMousePicker_setPick(RoboCompRCISMousePicker::Pick myPic
 {
     //subscribesToCODE
     qDebug() << myPick.x << myPick.y << myPick.z;
+    buffer.put(myPick.x,myPick.z);
+    
 }
 
 
