@@ -121,35 +121,35 @@ void SpecificWorker::compute()
 				differentialrobot_proxy->setSpeedBase(0, 2);
 			}
 			else
-            {
+            		{
 				if(beta < -2)
 				{
 					differentialrobot_proxy->setSpeedBase(0, -2);
 				}
 				else
-                {
+                		{
 					differentialrobot_proxy->setSpeedBase(0, beta);
 				}
 			}
 		}
 		else
-        {
+        	{
 			if(dist > 0.05)
 			{
 				if(dist > 1000)
 				{
 				differentialrobot_proxy->setSpeedBase(1000, 0);
-			    }
-                else
-                {
+			    	}
+                		else
+        			{
 				differentialrobot_proxy->setSpeedBase(dist, 0);
-			    }
-		    }
+			    	}
+		    	}
 			else
-            {
+    			{
 			    differentialrobot_proxy->setSpeedBase(0, 0);
 			    buffer.set_task_finished();
-            }
+            		}
 		}
 	}
 }
