@@ -23,12 +23,14 @@ struct Target
     float x; float y;
     mutable std::mutex my_mutex;
     bool activate = false;
+    int variable = 0;
 
     void put(float x_,float y_)
     {
         std::lock_guard<std::mutex> guard(my_mutex);
         x=x_;y=y_;   // generic type must be copy-constructable
         activate = true;
+        variable = 0;
         
     }
     std::optional<std::tuple<float,float>> get()
@@ -102,9 +104,8 @@ void SpecificWorker::compute()
 	RoboCompGenericBase::TBaseState state;
 	const ::Ice::Context& context = ::Ice::noExplicitContext;
 	differentialrobot_proxy->getBaseState(state, context);
-
 	if (auto t = buffer.get();t.has_value())
-	{
+	{ //std::min(dist*(1/1000),1);
 		auto tw = t.value();
 		Eigen::Vector2f rw(state.x,state.z);
 		Eigen::Matrix2f rot;
@@ -113,46 +114,30 @@ void SpecificWorker::compute()
 		auto tr = rot*(ty-rw);
 		auto beta = atan2(tr[0],tr[1]);	
 		auto dist = tr.norm();
-
-		if(beta > 0.05 ||beta < -0.05)
-		{
-			if(beta > 2)
-			{
-				differentialrobot_proxy->setSpeedBase(0, 2);
+		auto hola = std::min(dist/1000,(float)1);
+		std::cout << buffer.variable << std::endl;
+		switch(buffer.variable){
+			case 0:
+			differentialrobot_proxy->setSpeedBase(1000*hola*buffer.variable, beta);
+			if(beta > 0.09 || beta < -0.09){
+			buffer.variable = 0;
+			}else{buffer.variable = 1;}break;
+			case 1:
+			differentialrobot_proxy->setSpeedBase(1000*hola*buffer.variable, beta);
+			if(hola<0.05){
+				buffer.variable = 2;
 			}
-			else
-            		{
-				if(beta < -2)
-				{
-					differentialrobot_proxy->setSpeedBase(0, -2);
-				}
-				else
-                		{
-					differentialrobot_proxy->setSpeedBase(0, beta);
-				}
-			}
+			break;
+			case 2:
+			differentialrobot_proxy->setSpeedBase(0, 0);
+			buffer.set_task_finished();
+			break;
 		}
-		else
-        	{
-			if(dist > 0.05)
-			{
-				if(dist > 1000)
-				{
-				differentialrobot_proxy->setSpeedBase(1000, 0);
-			    	}
-                		else
-        			{
-				differentialrobot_proxy->setSpeedBase(dist, 0);
-			    	}
-		    	}
-			else
-    			{
-			    differentialrobot_proxy->setSpeedBase(0, 0);
-			    buffer.set_task_finished();
-            		}
-		}
+		
+		
 	}
 }
+
 
 int SpecificWorker::startup_check()
 {
