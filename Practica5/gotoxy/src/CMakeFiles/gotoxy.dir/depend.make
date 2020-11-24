@@ -4,6 +4,9 @@
 src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o: src/CommonBehavior.cpp
 src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o: src/CommonBehavior.h
 
+src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.cpp
+src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o: src/GenericBase.h
 
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o: src/GenericBase.cpp
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o: src/GenericBase.h
@@ -15,11 +18,11 @@ src/CMakeFiles/gotoxy.dir/Laser.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/RCISMousePicker.cpp.o: src/RCISMousePicker.cpp
 src/CMakeFiles/gotoxy.dir/RCISMousePicker.cpp.o: src/RCISMousePicker.h
 
-src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/commonbehaviorI.cpp
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/commonbehaviorI.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/genericmonitor.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/genericworker.h
+src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins
@@ -481,17 +484,18 @@ src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: /usr/include/x86_64-linux-gnu/q
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidgetaction.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/CommonBehavior.h
+src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/config.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/ui_mainUI.h
 
-src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/config.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/genericmonitor.cpp
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/genericmonitor.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/genericworker.h
+src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins
@@ -953,15 +957,16 @@ src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidgetaction.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/CommonBehavior.h
+src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/ui_mainUI.h
 
-src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/config.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/genericworker.cpp
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/genericworker.h
+src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins
@@ -1423,17 +1428,18 @@ src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: /usr/include/x86_64-linux-gnu/qt5
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidgetaction.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/CommonBehavior.h
+src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/ui_mainUI.h
 
-src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/gotoxy_autogen/EWIEGA46WW/moc_genericmonitor.cpp
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/gotoxy_autogen/EWIEGA46WW/moc_genericworker.cpp
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/gotoxy_autogen/EWIEGA46WW/moc_specificmonitor.cpp
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/gotoxy_autogen/EWIEGA46WW/moc_specificworker.cpp
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/gotoxy_autogen/mocs_compilation.cpp
+src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: /opt/robocomp/include/innermodel/innermodel.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: /opt/robocomp/include/innermodel/innermodelcamera.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: /opt/robocomp/include/innermodel/innermodelconfig.h
@@ -1931,6 +1937,7 @@ src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: /usr/include/x8
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidgetaction.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/CommonBehavior.h
+src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/RCISMousePicker.h
@@ -2406,9 +2413,6 @@ src/CMakeFiles/gotoxy.dir/home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.o
 src/CMakeFiles/gotoxy.dir/home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 src/CMakeFiles/gotoxy.dir/home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.o: src/gotoxy_autogen/include/moc_sigwatch.cpp
 
-src/CMakeFiles/gotoxy.dir/main.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
-src/CMakeFiles/gotoxy.dir/main.cpp.o: /home/salabeta/robocomp/classes/rapplication/rapplication.h
-src/CMakeFiles/gotoxy.dir/main.cpp.o: /home/salabeta/robocomp/classes/sigwatch/sigwatch.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/commonbehaviorI.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/config.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/genericmonitor.h
@@ -2416,6 +2420,9 @@ src/CMakeFiles/gotoxy.dir/main.cpp.o: src/genericworker.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/main.cpp
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/specificmonitor.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/specificworker.h
+src/CMakeFiles/gotoxy.dir/main.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
+src/CMakeFiles/gotoxy.dir/main.cpp.o: /home/salabeta/robocomp/classes/rapplication/rapplication.h
+src/CMakeFiles/gotoxy.dir/main.cpp.o: /home/salabeta/robocomp/classes/sigwatch/sigwatch.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: /opt/robocomp/include/innermodel/innermodel.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: /opt/robocomp/include/innermodel/innermodelcamera.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: /opt/robocomp/include/innermodel/innermodelconfig.h
@@ -2913,16 +2920,17 @@ src/CMakeFiles/gotoxy.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidget
 src/CMakeFiles/gotoxy.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidgetaction.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/CommonBehavior.h
+src/CMakeFiles/gotoxy.dir/main.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/rcismousepickerI.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/ui_mainUI.h
 
-src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: src/genericworker.h
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: src/rcismousepickerI.cpp
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: src/rcismousepickerI.h
+src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins
@@ -3384,18 +3392,19 @@ src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: /usr/include/x86_64-linux-gnu/
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidgetaction.h
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: src/CommonBehavior.h
+src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: src/config.h
 src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o: src/ui_mainUI.h
 
-src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/config.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/genericmonitor.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/genericworker.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/specificmonitor.cpp
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/specificmonitor.h
+src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins
@@ -3857,14 +3866,15 @@ src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: /usr/include/x86_64-linux-gnu/q
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidgetaction.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/CommonBehavior.h
+src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/ui_mainUI.h
 
-src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: src/specificworker.cpp
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: src/specificworker.h
+src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.h
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: /opt/robocomp/include/innermodel/innermodel.h
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: /opt/robocomp/include/innermodel/innermodelcamera.h
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: /opt/robocomp/include/innermodel/innermodelconfig.h

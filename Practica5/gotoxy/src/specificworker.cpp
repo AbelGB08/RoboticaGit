@@ -97,6 +97,11 @@ void SpecificWorker::initialize(int period) {
 
     graphicsView->fitInView(scene.sceneRect(), Qt::KeepAspectRatio);
 
+    // inicializar el grid
+    grid.init(-2500, -2500, 5000, 5000, 100);
+
+
+
     this->Period = 100;
     if (this->startup_check_flag) {
         this->startup_check();
@@ -105,31 +110,31 @@ void SpecificWorker::initialize(int period) {
     }
 }
 
-/**
- * A traves de un punto calculamos las coordenadas del punto en el mundo real y las transformamos al mundo del robot
- * @param bState
- * @return
- */
-Eigen::Vector2f SpecificWorker::transformar_targetRW(RoboCompGenericBase::TBaseState bState) {
-    // Coordenadas del target en el mundo real
-    auto[x, y, z] = tar.get().value();
 
-    //Target mundo real
-    Eigen::Vector2f tw(x, z);
+void SpecificWorker::compute()
+{
+    //Coordenadas del robot
+    RoboCompGenericBase::TBaseState bState;
+    RoboCompLaser::TLaserData ldata;
+    try { differentialrobot_proxy->getBaseState(bState); }
+    catch (const Ice::Exception &e) { std::cout << e.what() << std::endl; }
+    try {  ldata = laser_proxy->getLaserData();}
+    catch (const Ice::Exception &e) { std::cout << e.what() << std::endl; }
 
-    // Robot mundo robot
-    Eigen::Vector2f rw(bState.x, bState.z);
-
-    // Inicializamos una matriz de 2x2 en sentido horario.
-    Eigen::Matrix2f rot;
-    rot << cos(bState.alpha), sin(bState.alpha),
-            -sin(bState.alpha), cos(bState.alpha);
-
-    // Guardamos en un vector el resultado de la transpuesta de rot por la resta de tw - rw
-    Eigen::Vector2f tr = rot.transpose() * (tw - rw);
-
-    return tr;
+    if (auto data = target_buffer.get(); data.has_value())
+    {
+        target = data.value();
+        // calcular la función navegación
+    }
+    if(target_buffer.is_active() )
+    {
+        //buscar el más pequeño en el grid
+        dynamicWindowApproach(bState, ldata /* pasarle el target local */);
+        //pintat la celda seleccionadd en otro color
+    }
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void SpecificWorker::dynamicWindowApproach(RoboCompGenericBase::TBaseState bState, RoboCompLaser::TLaserData &ldata) {
     //coordenadas del target del mundo real al mundo del  robot
@@ -137,12 +142,14 @@ void SpecificWorker::dynamicWindowApproach(RoboCompGenericBase::TBaseState bStat
 
 //distancia que debe recorrer hasta el target
     auto dist = tr.norm();
-    if (dist < 50) {
+    if (dist < 50)
+    {
         differentialrobot_proxy->setSpeedBase(0, 0);
-        tar.activate = false;
+        target_buffer.activate = false;
         std::cout << "Se llegó al target" << std::endl;
         return;
-    } else {//Movimiento Dynamic Window Approach
+    }
+    else {//Movimiento Dynamic Window Approach
 
         //posiciones originales del robot
         float vOrigen = bState.advVz; // Advance V
@@ -177,21 +184,6 @@ void SpecificWorker::dynamicWindowApproach(RoboCompGenericBase::TBaseState bStat
             std::cout << "Vector vacio" << std::endl;
             return;
         }
-    }
-}
-
-void SpecificWorker::compute() {
-    //Coordenadas del robot
-    RoboCompGenericBase::TBaseState bState;
-    try { differentialrobot_proxy->getBaseState(bState); }
-    catch (const Ice::Exception &e) { std::cout << e.what() << std::endl; }
-
-    RoboCompLaser::TLaserData ldata;
-    try { ldata = laser_proxy->getLaserData(); }
-    catch (const Ice::Exception &e) { std::cout << e.what() << std::endl; }
-
-    if (auto data = tar.get(); data.has_value()) {
-        dynamicWindowApproach(bState, ldata);
     }
 }
 
@@ -333,6 +325,35 @@ std::vector<SpecificWorker::tupla> SpecificWorker::ordenar(std::vector<tupla> ve
     return vector;
 }
 
+/**
+* A traves de un punto calculamos las coordenadas del punto en el mundo real y las transformamos al mundo del robot
+* @param bState
+* @return
+*/
+Eigen::Vector2f SpecificWorker::transformar_targetRW(RoboCompGenericBase::TBaseState bState)
+{
+    // Coordenadas del target en el mundo real
+    auto[x, y, z] = target;
+
+    //Target mundo real
+    Eigen::Vector2f tw(x, z);
+
+    // Robot mundo robot
+    Eigen::Vector2f rw(bState.x, bState.z);
+
+    // Inicializamos una matriz de 2x2 en sentido horario.
+    Eigen::Matrix2f rot;
+    rot << cos(bState.alpha), sin(bState.alpha),
+            -sin(bState.alpha), cos(bState.alpha);
+
+    // Guardamos en un vector el resultado de la transpuesta de rot por la resta de tw - rw
+    Eigen::Vector2f tr = rot.transpose() * (tw - rw);
+
+    return tr;
+}
+
+
+
 ///////////___________________________________///////////////
 int SpecificWorker::startup_check() {
     std::cout << "Startup check" << std::endl;
@@ -346,7 +367,7 @@ int SpecificWorker::startup_check() {
  */
 void SpecificWorker::RCISMousePicker_setPick(RoboCompRCISMousePicker::Pick myPick) {
 
-    tar.put(std::make_tuple(myPick.x, myPick.y, myPick.z)); //metemos las coordenadas con el mutex iniciado
+    target_buffer.put(std::make_tuple(myPick.x, myPick.y, myPick.z)); //metemos las coordenadas con el mutex iniciado
     //Coordenadas del target
     std::cout << "x: " << myPick.x;
     std::cout << "..y: " << myPick.y;

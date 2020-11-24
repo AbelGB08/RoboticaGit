@@ -58,11 +58,15 @@ Q_OBJECT
             } else
                 return {};
         }
-
-
-        void set_task_finished() {
+        void set_task_finished()
+        {
             std::lock_guard<std::mutex> guard(mutex);
             activate = false;
+        }
+        void is_active()
+        {
+            std::lock_guard<std::mutex> guard(mutex);
+            return activate;
         }
     };
 
@@ -85,7 +89,8 @@ private:
     //tupla de 3 variables float para las coordenadas x,y,z.
     using Tpose = std::tuple<float, float, float>;
     //variable tipo Target con la tupla Tpose
-    Target<Tpose> tar;
+    Target<Tpose> target_buffer;
+    Tpose target;
 
     using tupla = std::tuple<float, float, float, float, float>;
 
@@ -104,6 +109,10 @@ private:
 
     void draw_things(const RoboCompGenericBase::TBaseState &bState, const RoboCompLaser::TLaserData &ldata, const std::vector<tupla> &puntos, const tupla &front);
     std::vector<QGraphicsEllipseItem*> arcs_vector;
+
+    //gricd
+    Grid<-2500, -2500, 2500, 2500, 100> grid;
+
 };
 
 #endif
