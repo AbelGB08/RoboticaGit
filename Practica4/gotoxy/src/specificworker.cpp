@@ -162,7 +162,7 @@ void SpecificWorker::displacament() {
         switch (buffer.variable) {
             case 0:
                 differentialrobot_proxy->setSpeedBase(1000 * hola * buffer.variable, beta);
-                if (beta > 0.09) {
+                if (beta > 0.09 || beta < -0.09) {
                     buffer.variable = 0;
                 }
                 else{
