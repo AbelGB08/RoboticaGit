@@ -22,40 +22,45 @@
 	@author jvallero & mtorocom
 */
 
-
-
 #ifndef SPECIFICWORKER_H
 #define SPECIFICWORKER_H
 
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsItem>
+#include "grid.h"
 
 using namespace Eigen;
 
-class SpecificWorker : public GenericWorker {
-Q_OBJECT
+class SpecificWorker : public GenericWorker
+{
 
-    template<typename T>
-    struct Target {
+    template <typename T>
+    struct Target
+    {
         T data;
         std::mutex mutex;
         bool activate = false;
-
-        void put(const T &Data) {
+        bool empty = true;
+        
+        void put(const T &Data)
+        {
             std::lock_guard<std::mutex> guard(mutex);
             data = Data;
             activate = true;
+            empty = false;
         }
-
-        std::optional<T> get() {
+        std::optional<T> get()
+        {
             std::lock_guard<std::mutex> guard(mutex);
-            if (activate) {
+            if (not empty)
+            {
                 return data;
-            } else
+            }
+            else
                 return {};
         }
         void set_task_finished()
@@ -63,7 +68,7 @@ Q_OBJECT
             std::lock_guard<std::mutex> guard(mutex);
             activate = false;
         }
-        void is_active()
+        bool is_active()
         {
             std::lock_guard<std::mutex> guard(mutex);
             return activate;
@@ -76,43 +81,51 @@ public:
     bool setParams(RoboCompCommonBehavior::ParameterList params);
     void RCISMousePicker_setPick(RoboCompRCISMousePicker::Pick myPick);
 
-
 public slots:
 
     void compute();
     int startup_check();
     void initialize(int period);
+    void  fill_grid_with_obstacles();
 
 private:
     std::shared_ptr<InnerModel> innerModel;
     bool startup_check_flag;
+
+protected:
+       void resizeEvent(QResizeEvent * event)
+       {
+           graphicsView->fitInView(scene.sceneRect(), Qt::KeepAspectRatio);
+       }
+
     //tupla de 3 variables float para las coordenadas x,y,z.
     using Tpose = std::tuple<float, float, float>;
+
     //variable tipo Target con la tupla Tpose
     Target<Tpose> target_buffer;
     Tpose target;
-
     using tupla = std::tuple<float, float, float, float, float>;
+    Eigen::Vector2f transformar_targetRW(RoboCompGenericBase::TBaseState bState);
 
-    Eigen::Vector2f transformar_targetRW( RoboCompGenericBase::TBaseState bState);
-
-    std::vector<tupla> calcularPuntos(float vOrigen,  float wOrigen);
+    //e4
+    std::vector<tupla> calcularPuntos(float vOrigen, float wOrigen);
     std::vector<tupla> ordenar(std::vector<tupla> vector, float x, float z);
-    std::vector<tupla> obstaculos(std::vector<tupla> vector, float aph,const RoboCompLaser::TLaserData &ldata);
+    std::vector<tupla> obstaculos(std::vector<tupla> vector, float aph, const RoboCompLaser::TLaserData &ldata);
     void dynamicWindowApproach(RoboCompGenericBase::TBaseState bState, RoboCompLaser::TLaserData &ldata);
+
     //draw
     QGraphicsScene scene;
     QGraphicsView *graphicsView;
     QGraphicsItem *robot_polygon = nullptr;
     QGraphicsItem *laser_polygon = nullptr;
+
     const float ROBOT_LENGTH = 400;
-
     void draw_things(const RoboCompGenericBase::TBaseState &bState, const RoboCompLaser::TLaserData &ldata, const std::vector<tupla> &puntos, const tupla &front);
-    std::vector<QGraphicsEllipseItem*> arcs_vector;
+    void draw(const RoboCompGenericBase::TBaseState &bState, const RoboCompLaser::TLaserData &ldata);
+    std::vector<QGraphicsEllipseItem *> arcs_vector;
 
-    //gricd
-    Grid<-2500, -2500, 2500, 2500, 100> grid;
-
+    //grid
+    Grid<int, -2500, int, 5000, int, 100> grid;
 };
 
 #endif

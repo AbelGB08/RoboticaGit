@@ -4,22 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CommonBehavior.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/DifferentialRobot.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/GenericBase.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/Laser.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/Laser.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/RCISMousePicker.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/RCISMousePicker.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/commonbehaviorI.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/genericmonitor.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/genericworker.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/genericworker.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/gotoxy_autogen/mocs_compilation.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/main.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/main.cpp.o"
-  "/opt/robocomp/classes/qlog/qlog.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.o"
-  "/opt/robocomp/classes/rapplication/rapplication.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o"
-  "/opt/robocomp/classes/sigwatch/sigwatch.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/rcismousepickerI.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/specificmonitor.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/specificworker.cpp" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/specificworker.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CommonBehavior.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/DifferentialRobot.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/GenericBase.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/Laser.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/Laser.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/RCISMousePicker.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/RCISMousePicker.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/commonbehaviorI.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/genericmonitor.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/genericworker.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/genericworker.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/gotoxy_autogen/mocs_compilation.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o"
+  "/home/abel/robocomp/classes/qlog/qlog.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/home/abel/robocomp/classes/qlog/qlog.cpp.o"
+  "/home/abel/robocomp/classes/rapplication/rapplication.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/home/abel/robocomp/classes/rapplication/rapplication.cpp.o"
+  "/home/abel/robocomp/classes/sigwatch/sigwatch.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/home/abel/robocomp/classes/sigwatch/sigwatch.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/main.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/main.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/rcismousepickerI.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/rcismousepickerI.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/specificmonitor.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/specificworker.cpp" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CMakeFiles/gotoxy.dir/specificworker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -29,6 +29,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "QT_CORE_LIB"
   "QT_GUI_LIB"
   "QT_NETWORK_LIB"
+  "QT_NO_DEBUG"
   "QT_OPENGL_LIB"
   "QT_SQL_LIB"
   "QT_WIDGETS_LIB"
@@ -44,9 +45,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/robocomp/include"
   "/classes"
   "."
-  "/opt/robocomp/classes"
-  "/opt/robocomp/libs"
-  "/opt/robocomp/interfaces"
+  "/home/abel/robocomp/classes"
+  "/home/abel/robocomp/libs"
+  "/home/abel/robocomp/interfaces"
   "/include"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtGui"
@@ -62,11 +63,11 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CommonBehavior.h" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/CommonBehavior.cpp"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/DifferentialRobot.h" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/DifferentialRobot.cpp"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/GenericBase.h" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/GenericBase.cpp"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/Laser.h" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/Laser.cpp"
-  "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/RCISMousePicker.h" "/home/salabeta/Escritorio/RoboticaGit/Practica5/gotoxy/src/RCISMousePicker.cpp"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CommonBehavior.h" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/CommonBehavior.cpp"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/DifferentialRobot.h" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/DifferentialRobot.cpp"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/GenericBase.h" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/GenericBase.cpp"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/Laser.h" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/Laser.cpp"
+  "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/RCISMousePicker.h" "/home/abel/UNEX/Cuarto/Robotica/RoboticaGit/Practica5/gotoxy/src/RCISMousePicker.cpp"
   )
 
 
